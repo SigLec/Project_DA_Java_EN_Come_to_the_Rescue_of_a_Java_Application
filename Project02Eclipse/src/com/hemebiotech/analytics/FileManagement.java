@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Simple brute force implementation
@@ -43,6 +45,17 @@ public class FileManagement implements IFileManagement {
 		}
 
 		return result;
+	}
+
+	@Override
+	public Map<String, Integer> getFileOccurence(ArrayList<String> result) {
+		TreeMap<String, Integer> data = new TreeMap<String, Integer>();
+
+		for (String s : result) {
+			int count = data.containsKey(s) ? data.get(s) : 0;
+			data.put(s, count + 1);
+		}
+		return data;
 	}
 
 }

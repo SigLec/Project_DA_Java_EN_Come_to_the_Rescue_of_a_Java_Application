@@ -1,6 +1,8 @@
 package com.hemebiotech.analytics;
 
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class Main {
 
@@ -11,6 +13,13 @@ public class Main {
 		ArrayList<String> result = new ArrayList<String>();
 		result = (ArrayList<String>) file.getFileIn();
 
-		System.out.println(result); // Lecture des données de file dans l'ArrayList result
+		Map<String, Integer> data = new TreeMap<String, Integer>();
+		data = file.getFileOccurence(result);
+
+		System.out.println(data);
+		/*
+		 * Données de l'ArrayList result transférées dans la TreeMap data qui compte le
+		 * nombre d'occurence pour chaque symptôme et les classe par ordre alphabétique
+		 */
 	}
 }
