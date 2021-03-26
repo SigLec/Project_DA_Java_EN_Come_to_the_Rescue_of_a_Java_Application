@@ -10,7 +10,7 @@ import java.util.List;
  * Simple brute force implementation
  *
  */
-public class FileManagement implements ISymptomReader {
+public class FileManagement implements IFileManagement {
 
 	private String filepath;
 
