@@ -1,5 +1,6 @@
 package com.hemebiotech.analytics;
 
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -22,4 +23,6 @@ public interface IFileManagement {
 	List<String> getFileIn();
 
 	Map<String, Integer> getFileOccurence(ArrayList<String> result);
+
+	FileWriter getFileOut(Map<String, Integer> data);
 }

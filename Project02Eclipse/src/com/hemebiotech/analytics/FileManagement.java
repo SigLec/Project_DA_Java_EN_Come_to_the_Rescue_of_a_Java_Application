@@ -1,7 +1,9 @@
 package com.hemebiotech.analytics;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +58,26 @@ public class FileManagement implements IFileManagement {
 			data.put(s, count + 1);
 		}
 		return data;
+	}
+
+	@Override
+	public FileWriter getFileOut(Map<String, Integer> data) {
+
+		try {
+			FileWriter fileOut = new FileWriter("results.out");
+			BufferedWriter out = new BufferedWriter(fileOut);
+			for (Map.Entry<String, Integer> entry : data.entrySet()) {
+				out.write(entry.getKey() + " = " + entry.getValue() + "\n");
+			}
+			out.flush();
+			out.close();
+			return fileOut;
+
+		} catch (IOException e) {
+			e.printStackTrace();
+			System.out.println("Erreur : le fichier n'a pas été généré");
+		}
+		return null;
 	}
 
 }

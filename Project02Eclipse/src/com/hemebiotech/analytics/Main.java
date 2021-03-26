@@ -16,10 +16,10 @@ public class Main {
 		Map<String, Integer> data = new TreeMap<String, Integer>();
 		data = file.getFileOccurence(result);
 
-		System.out.println(data);
+		file.getFileOut(data);
+
 		/*
-		 * Données de l'ArrayList result transférées dans la TreeMap data qui compte le
-		 * nombre d'occurence pour chaque symptôme et les classe par ordre alphabétique
+		 * Données de la TreeMap data écrites dans un nouveau fichier créé "results.out"
 		 */
 	}
 }
