@@ -24,7 +24,7 @@ public class FileManagement implements IFileManagement {
 	}
 
 	@Override
-	public List<String> GetSymptoms() {
+	public List<String> getFileIn() {
 		ArrayList<String> result = new ArrayList<String>();
 
 		if (filepath != null) {
