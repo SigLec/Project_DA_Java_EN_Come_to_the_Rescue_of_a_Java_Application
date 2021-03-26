@@ -18,8 +18,5 @@ public class Main {
 
 		file.getFileOut(data);
 
-		/*
-		 * Données de la TreeMap data écrites dans un nouveau fichier créé "results.out"
-		 */
 	}
 }

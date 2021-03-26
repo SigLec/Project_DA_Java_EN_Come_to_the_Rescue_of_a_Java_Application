@@ -12,16 +12,15 @@ import java.util.TreeMap;
 
 /**
  * Simple brute force implementation
- *
+ * 
+ * @see IFileManagement
  */
 public class FileManagement implements IFileManagement {
 
 	private String filepath;
 
 	/**
-	 * 
-	 * @param filepath a full or partial path to file with symptom strings in it,
-	 *                 one per line
+	 * @param filepath a full or partial path to file
 	 */
 	public FileManagement(String filepath) {
 		this.filepath = filepath;
@@ -49,6 +48,9 @@ public class FileManagement implements IFileManagement {
 		return result;
 	}
 
+	/**
+	 * @param list -> ArrayList<String> result : list of data extracted from file.
+	 */
 	@Override
 	public Map<String, Integer> getFileOccurence(ArrayList<String> result) {
 		TreeMap<String, Integer> data = new TreeMap<String, Integer>();
@@ -60,6 +62,10 @@ public class FileManagement implements IFileManagement {
 		return data;
 	}
 
+	/**
+	 * @param map -> Map<String, Integer> data : data extracted from list with
+	 *            account of duplications and sorted in natural order.
+	 */
 	@Override
 	public FileWriter getFileOut(Map<String, Integer> data) {
 

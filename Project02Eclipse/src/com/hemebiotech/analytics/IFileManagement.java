@@ -6,23 +6,25 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Anything that will read symptom data from a source The important part is, the
- * return value from the operation, which is a list of strings, that may contain
- * many duplications
- * 
- * The implementation does not need to order the list
- * 
+ * Read data file in a list, count duplications, put in natural order and write
+ * them in a new file.
  */
 public interface IFileManagement {
 	/**
-	 * If no data is available, return an empty List
-	 * 
-	 * @return a raw listing of all Symptoms obtained from a data source, duplicates
-	 *         are possible/probable
+	 *
+	 * @return a raw listing of all data obtained from source. If no data is
+	 *         available, return an empty List
 	 */
 	List<String> getFileIn();
 
+	/**
+	 * @return a map counting all symptoms duplications and classifying in natural
+	 *         order.
+	 */
 	Map<String, Integer> getFileOccurence(ArrayList<String> result);
 
+	/**
+	 * @return a new file containing the data of the TreeMap.
+	 */
 	FileWriter getFileOut(Map<String, Integer> data);
 }
